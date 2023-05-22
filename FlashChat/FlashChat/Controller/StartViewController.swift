@@ -16,7 +16,13 @@ class StartViewController: CustomViewController<StartView> {
     }
 }
 
+//MARK: - StartViewDelegate
 extension StartViewController: StartViewDelegate {
-    func StartView(_ view: StartView, didTapButton button: UIButton) {
+    func StartView(_ view: StartView, didTapRegisterButton button: UIButton) {
+        print("Register button")
+    }
+    
+    func StartView(_ view: StartView, didTapLogInButton button: UIButton) {
+        print("LogIn button")
     }
 }

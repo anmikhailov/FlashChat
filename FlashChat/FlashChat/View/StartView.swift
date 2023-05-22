@@ -8,7 +8,8 @@
 import UIKit
 
 protocol StartViewDelegate: AnyObject {
-    func StartView(_ view: StartView, didTapButton button: UIButton)
+    func StartView(_ view: StartView, didTapRegisterButton button: UIButton)
+    func StartView(_ view: StartView, didTapLogInButton button: UIButton)
 }
 
 class StartView: CustomView {
@@ -31,7 +32,7 @@ class StartView: CustomView {
         element.setTitleColor(Resources.Colors.blue, for: .normal)
         element.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         element.translatesAutoresizingMaskIntoConstraints = false
-//        element.addTarget(self, action: #selector(<#selector#>), for: .touchUpInside)
+        element.addTarget(self, action: #selector(didTapRegisterButton(_:)), for: .touchUpInside)
         return element
     }()
     
@@ -42,7 +43,7 @@ class StartView: CustomView {
         element.setTitleColor(.white, for: .normal)
         element.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         element.translatesAutoresizingMaskIntoConstraints = false
-//        element.addTarget(self, action: #selector(<#selector#>), for: .touchUpInside)
+        element.addTarget(self, action: #selector(didTapLogInButton(_:)), for: .touchUpInside)
         return element
     }()
     
@@ -81,7 +82,11 @@ class StartView: CustomView {
 
 //MARK: - Target Actions
 private extension StartView {
-    @objc func didTapButton(_ button: UIButton) {
-        delegate?.StartView(self, didTapButton: button)
+    @objc func didTapRegisterButton(_ button: UIButton) {
+        delegate?.StartView(self, didTapRegisterButton: button)
+    }
+    
+    @objc func didTapLogInButton(_ button: UIButton) {
+        delegate?.StartView(self, didTapLogInButton: button)
     }
 }
