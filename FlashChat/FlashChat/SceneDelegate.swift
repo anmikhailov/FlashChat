@@ -15,8 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let chatVC = ChatViewController()
-        window?.rootViewController = chatVC
+        let startVC = StartViewController()
+        window?.rootViewController = startVC
         window?.overrideUserInterfaceStyle = .light
         window?.makeKeyAndVisible()
     }
