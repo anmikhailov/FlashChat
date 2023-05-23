@@ -34,10 +34,30 @@ class AuthViewController: CustomViewController<AuthView> {
 //MARK: - AuthViewDelegate
 extension AuthViewController: AuthViewDelegate {
     func AuthView(_ view: AuthView, didTapRegistrationButton button: UIButton) {
-        print("Registr pressed")
+        let email = customView.emailText
+        let password = customView.passwordText
+        
+        FirebaseManager.shared.registration(withEmail: email, password: password) { [weak self] err in
+            if err == nil {
+                let chatVC = ChatViewController()
+                self?.navigationController?.pushViewController(chatVC, animated: true)
+            } else {
+                print(err?.localizedDescription)
+            }
+        }
     }
     
     func AuthView(_ view: AuthView, didTapLogInButton button: UIButton) {
-        print("LogIn pressed")
+        let email = customView.emailText
+        let password = customView.passwordText
+        
+        FirebaseManager.shared.logIn(withEmail: email, password: password) { [weak self] err in
+            if err == nil {
+                let chatVC = ChatViewController()
+                self?.navigationController?.pushViewController(chatVC, animated: true)
+            } else {
+                print(err?.localizedDescription)
+            }
+        }
     }
 }

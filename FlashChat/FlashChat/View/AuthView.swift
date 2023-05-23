@@ -15,6 +15,15 @@ protocol AuthViewDelegate: AnyObject {
 class AuthView: CustomView {
     weak var delegate: AuthViewDelegate?
     
+    //MARK: - Public variables
+    var emailText: String {
+        return emailTextField.text ?? ""
+    }
+    
+    var passwordText: String {
+        return passwordTextField.text ?? ""
+    }
+    
     //MARK: - Variables
     private lazy var emailView: UIView = {
         let element = UIView()
@@ -57,6 +66,7 @@ class AuthView: CustomView {
         element.placeholder = "Password"
         element.textAlignment = .center
         element.font = UIFont.systemFont(ofSize: 25)
+        element.isSecureTextEntry = true
         element.textColor = Resources.Colors.blue
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -133,12 +143,12 @@ class AuthView: CustomView {
             backgroundColor = Resources.Colors.lightBlue
             authButton.setTitle("Registration", for: .normal)
             authButton.setTitleColor(Resources.Colors.blue, for: .normal)
-//            authButton.addTarget(self, action: #selector(didTapRegistrationButton(_:)), for: .touchUpInside)
+            authButton.addTarget(self, action: #selector(didTapRegistrationButton(_:)), for: .touchUpInside)
         case .logIn:
             backgroundColor = Resources.Colors.blue
             authButton.setTitle("Log In", for: .normal)
             authButton.setTitleColor(.white, for: .normal)
-//            authButton.addTarget(self, action: #selector(didTapLogInButton(_:)), for: .touchUpInside)
+            authButton.addTarget(self, action: #selector(didTapLogInButton(_:)), for: .touchUpInside)
         }
     }
 }

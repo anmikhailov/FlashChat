@@ -9,12 +9,18 @@ import UIKit
 
 protocol ChatViewDelegate: AnyObject {
     func ChatView(_ view: ChatView, didTapSendMessageButton button: UIButton)
+    func ChatView(_ view: ChatView, didTapLogOutButton button: UIButton)
 }
 
 class ChatView: CustomView {
     weak var delegate: ChatViewDelegate?
     
     //MARK: - Variables
+    lazy var logOutBarButton: UIBarButtonItem = {
+        let element = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(didTapLogOutButton(_:)))
+        return element
+    }()
+    
     private lazy var chatTableView: UITableView = {
         let element = UITableView()
         
@@ -97,6 +103,10 @@ class ChatView: CustomView {
 private extension ChatView {
     @objc func didTapSendMessageButton(_ button: UIButton) {
         delegate?.ChatView(self, didTapSendMessageButton: button)
+    }
+    
+    @objc func didTapLogOutButton(_ button: UIButton) {
+        delegate?.ChatView(self, didTapLogOutButton: button)
     }
 }
 

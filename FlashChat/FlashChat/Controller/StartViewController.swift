@@ -13,8 +13,11 @@ class StartViewController: CustomViewController<StartView> {
         super.viewDidLoad()
         
         customView.delegate = self
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         customView.titleLabelText = ""
+        
         var charIndex = 0.0
         let titleText = "⚡️FlashChat"
         for letter in titleText {
