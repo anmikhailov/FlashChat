@@ -15,6 +15,16 @@ protocol StartViewDelegate: AnyObject {
 class StartView: CustomView {
     weak var delegate: StartViewDelegate?
     
+    //MARK: - public variables
+    var titleLabelText: String {
+        get {
+            return titleLabel.text ?? ""
+        }
+        set {
+            titleLabel.text = newValue
+        }
+    }
+    
     //MARK: - Variables
     private lazy var titleLabel: UILabel = {
         let element = UILabel()
