@@ -18,6 +18,8 @@
 		846FAFBF2A1BAAD700481DEB /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FAFBE2A1BAAD600481DEB /* StartViewController.swift */; };
 		846FAFC12A1BAAE200481DEB /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FAFC02A1BAAE200481DEB /* StartView.swift */; };
 		846FAFC52A1BADCD00481DEB /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FAFC42A1BADCD00481DEB /* Resources.swift */; };
+		846FAFC72A1BB67600481DEB /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FAFC62A1BB67600481DEB /* AuthView.swift */; };
+		846FAFC92A1BB68200481DEB /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FAFC82A1BB68200481DEB /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		846FAFBE2A1BAAD600481DEB /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		846FAFC02A1BAAE200481DEB /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		846FAFC42A1BADCD00481DEB /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		846FAFC62A1BB67600481DEB /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		846FAFC82A1BB68200481DEB /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 				846FAFB62A1B7A9800481DEB /* CustomView.swift */,
 				846FAFBA2A1B7AD300481DEB /* ChatView.swift */,
 				846FAFC02A1BAAE200481DEB /* StartView.swift */,
+				846FAFC62A1BB67600481DEB /* AuthView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 				846FAFB82A1B7AA700481DEB /* CustomViewController.swift */,
 				846FAFBC2A1B7ADE00481DEB /* ChatViewController.swift */,
 				846FAFBE2A1BAAD600481DEB /* StartViewController.swift */,
+				846FAFC82A1BB68200481DEB /* AuthViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,12 +190,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846FAFC92A1BB68200481DEB /* AuthViewController.swift in Sources */,
 				846FAFB72A1B7A9800481DEB /* CustomView.swift in Sources */,
 				846FAFBF2A1BAAD700481DEB /* StartViewController.swift in Sources */,
 				846FAF9F2A1B78A300481DEB /* AppDelegate.swift in Sources */,
 				846FAFC12A1BAAE200481DEB /* StartView.swift in Sources */,
 				846FAFBB2A1B7AD300481DEB /* ChatView.swift in Sources */,
 				846FAFA12A1B78A300481DEB /* SceneDelegate.swift in Sources */,
+				846FAFC72A1BB67600481DEB /* AuthView.swift in Sources */,
 				846FAFC52A1BADCD00481DEB /* Resources.swift in Sources */,
 				846FAFBD2A1B7ADE00481DEB /* ChatViewController.swift in Sources */,
 				846FAFB92A1B7AA700481DEB /* CustomViewController.swift in Sources */,

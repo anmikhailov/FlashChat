@@ -20,4 +20,8 @@ enum Resources {
         static var me = UIImage(named: "MeAvatar")
         static var you = UIImage(named: "YouAvatar")
     }
+    
+    enum Images {
+        static var textFieldBg = UIImage(named: "textfield")
+    }
 }
