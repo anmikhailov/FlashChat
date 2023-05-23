@@ -23,5 +23,6 @@ enum Resources {
     
     enum Images {
         static var textFieldBg = UIImage(named: "textfield")
+        static var sendMessageIcon = UIImage(systemName: "paperplane.fill")
     }
 }

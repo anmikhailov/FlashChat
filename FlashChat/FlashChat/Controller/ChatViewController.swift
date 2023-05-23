@@ -17,6 +17,7 @@ class ChatViewController: CustomViewController<ChatView> {
 }
 
 extension ChatViewController: ChatViewDelegate {
-    func ChatView(_ view: ChatView, didTapButton button: UIButton) {
+    func ChatView(_ view: ChatView, didTapSendMessageButton button: UIButton) {
+        print("Send message")
     }
 }
