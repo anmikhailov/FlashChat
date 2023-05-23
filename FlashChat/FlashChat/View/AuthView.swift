@@ -41,6 +41,7 @@ class AuthView: CustomView {
     private lazy var emailTextField: UITextField = {
         let element = UITextField()
         element.placeholder = "Email"
+        element.text = "1@2.com"
         element.textAlignment = .center
         element.font = UIFont.systemFont(ofSize: 25)
         element.textColor = Resources.Colors.blue
@@ -64,6 +65,7 @@ class AuthView: CustomView {
     private lazy var passwordTextField: UITextField = {
         let element = UITextField()
         element.placeholder = "Password"
+        element.text = "123456"
         element.textAlignment = .center
         element.font = UIFont.systemFont(ofSize: 25)
         element.isSecureTextEntry = true
