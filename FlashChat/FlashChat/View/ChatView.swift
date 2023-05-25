@@ -21,20 +21,22 @@ class ChatView: CustomView {
         return element
     }()
     
-    private lazy var chatTableView: UITableView = {
+    lazy var chatTableView: UITableView = {
         let element = UITableView()
-        
+        element.register(MessageCell.self, forCellReuseIdentifier: MessageCell.identifier)
+        element.separatorStyle = .none
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
     
-    private lazy var messageView: UIView = {
+    lazy var messageView: UIView = {
         let element = UIView()
+        element.backgroundColor = Resources.Colors.purple
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
     
-    private lazy var messageTextField: UITextField = {
+    lazy var messageTextField: UITextField = {
         let element = UITextField()
         element.placeholder = "Write a message"
         element.backgroundColor = .white
@@ -62,7 +64,7 @@ class ChatView: CustomView {
     override func setViews() {
         super.setViews()
         
-        backgroundColor = Resources.Colors.purple
+        backgroundColor = Resources.Colors.blue
         
         self.addSubview(chatTableView)
         self.addSubview(messageView)
@@ -81,17 +83,17 @@ class ChatView: CustomView {
             chatTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             chatTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            messageView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
-            messageView.heightAnchor.constraint(equalToConstant: 60),
+            messageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            messageView.heightAnchor.constraint(equalToConstant: 90),
             messageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             messageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            messageTextField.topAnchor.constraint(equalTo: messageView.topAnchor, constant: 20),
+            messageTextField.topAnchor.constraint(equalTo: messageView.topAnchor, constant: 10),
             messageTextField.heightAnchor.constraint(equalToConstant: 40),
             messageTextField.leadingAnchor.constraint(equalTo: messageView.leadingAnchor, constant: 20),
             messageTextField.trailingAnchor.constraint(equalTo: sendMessageButton.leadingAnchor, constant: -20),
             
-            sendMessageButton.topAnchor.constraint(equalTo: messageView.topAnchor, constant: 20),
+            sendMessageButton.topAnchor.constraint(equalTo: messageView.topAnchor, constant: 10),
             sendMessageButton.heightAnchor.constraint(equalToConstant: 40),
             sendMessageButton.trailingAnchor.constraint(equalTo: messageView.trailingAnchor, constant: -20),
             sendMessageButton.widthAnchor.constraint(equalToConstant: 40),

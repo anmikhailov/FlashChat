@@ -29,6 +29,9 @@ class AuthViewController: CustomViewController<AuthView> {
         customView.delegate = self
     }
 
+    func showAlert() {
+        
+    }
 }
 
 //MARK: - AuthViewDelegate
